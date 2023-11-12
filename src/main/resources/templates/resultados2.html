@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla de Multiplicar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <h2>Resultados de la Tabla de Multiplicar</h2>
+    <form>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Operación</th>
+                    <th scope="col">Resultado</th>
+                    
+                    <th scope="col">¿Es par?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="resultado : ${tablaMultiplicar}">
+                    <td th:text="${resultado.operacion}"></td>
+                    <td th:text="${#numbers.formatDecimal(resultado.resultado, 2, 0)}"></td>
+                    
+                    <td>
+                        <input type="checkbox" th:checked="${resultado.esPar}" th:disabled="${!resultado.esPar}" readonly/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <a href="/" class="list-group-item list-group-item-action btn btn-info mt-3 text-center">RETORNAR</a>
+
+</body>
+</html>
+
+

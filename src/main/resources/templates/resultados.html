@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados de Números Primos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <h2 class="text-center">Resultados de Números Primos</h2>
+    <select class="form-control">
+        <option th:each="numero : ${numerosPrimos}" th:text="${numero}"></option>
+    </select>
+    <a href="/" class="list-group-item list-group-item-action btn btn-info mt-3 text-center">RETORNAR</a>
+
+
+</body>
+</html>
